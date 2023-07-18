@@ -15,8 +15,13 @@ Currently, all applications use Helm charts.
 
    Kustomize is theoretically supported but has not been used to date in the `Phalanx repository`_, and therefore isn't recommended.
 
-There does not yet exist a SQuaRE-produced a template for the Helm chart; rather, we use the built-in Helm starter template.
-Use ``helm create -p starters/web-service`` to create a new chart from that template.
+There is a template for the Helm chart within the Phallanx repository. Whilst in the root directory, use:
+
+.. code-block::
+
+	helm create -p $(pwd)/starters/web-service <application-name>
+
+(substituting ``<application-name>`` with the name of your application) to create a new chart from that template. Following that, move the resulting directory into ``/applications``.
 **Be sure you are using Helm v3.**
 Helm v2 is not supported.
 
